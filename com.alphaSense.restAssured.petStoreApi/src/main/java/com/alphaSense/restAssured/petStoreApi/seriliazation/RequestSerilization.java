@@ -8,7 +8,7 @@ public class RequestSerilization {
 	private Category category;
 	private String name;
 	private ArrayList<String> photoUrls;
-	private ArrayList<String> tags;
+	private ArrayList<Tag> tags;
 	private String status;
 	
 	public int getId() {
@@ -35,10 +35,10 @@ public class RequestSerilization {
 	public void setPhotoUrls(ArrayList<String> photoUrls) {
 		this.photoUrls = photoUrls;
 	}
-	public ArrayList<String> getTags() {
+	public ArrayList<Tag> getTags() {
 		return tags;
 	}
-	public void setTags(ArrayList<String> tags) {
+	public void setTags(ArrayList<Tag> tags) {
 		this.tags = tags;
 	}
 	public String getStatus() {

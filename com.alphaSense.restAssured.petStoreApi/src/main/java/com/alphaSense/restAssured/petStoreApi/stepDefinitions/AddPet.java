@@ -39,15 +39,24 @@ public class AddPet {
 		photoURLs.add("URL1");
 		photoURLs.add("URL2");
 		
+		Tag tag = new Tag();
+		tag.setId(id);
+		tag.setName(name);
+		
+		ArrayList<Tag> arrayOfTags = new ArrayList<Tag>();
+		arrayOfTags.add(tag);
+		
 		ArrayList<String> tags = new ArrayList<String>();
 		tags.add("HomeDog");
+		tags.add(name);
 				
 		
 		RequestSerilization req = new RequestSerilization();
 		req.setId(id);
 		req.setCategory(category);
+		req.setName(name);
 		req.setPhotoUrls(photoURLs);
-		req.setTags(tags);
+		req.setTags(arrayOfTags);
 		req.setStatus("Owned");		
 				
 		request = given().spec(requestSpec.requestSpecification()).body(req);
@@ -56,7 +65,7 @@ public class AddPet {
 	@When("user hits a {string} request")
 	public void user_hits_a_request(String httpMethod) {
 		
-		request.when().post("/pet/"+id).then().assertThat().statusCode(300);
+		request.log().all().when().post("/pet/"+id).then().assertThat().statusCode(300);
 	   	   
 	         
 	}

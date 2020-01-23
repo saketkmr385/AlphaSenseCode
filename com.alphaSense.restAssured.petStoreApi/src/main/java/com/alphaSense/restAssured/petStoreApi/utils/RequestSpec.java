@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 public class RequestSpec {
 	
 	public RequestSpecification requestSpecification(){
-		return new RequestSpecBuilder().setBaseUri("http://petstore.swagger.io/v2").setContentType(ContentType.JSON).build();
+		return new RequestSpecBuilder().setBaseUri("https://petstore.swagger.io/v2").addHeader("Content-Type", "application/json").build();
 	}
 	
 	

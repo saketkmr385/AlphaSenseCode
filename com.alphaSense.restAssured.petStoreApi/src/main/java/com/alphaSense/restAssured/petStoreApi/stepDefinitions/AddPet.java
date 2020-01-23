@@ -65,21 +65,19 @@ public class AddPet {
 	@When("user hits a {string} request")
 	public void user_hits_a_request(String httpMethod) {
 		
-		request.log().all().when().post("/pet/"+id).then().assertThat().statusCode(300);
+		request.log().all().when().post("/pet/").then().assertThat().statusCode(200);
 	   	   
 	         
 	}
 
 	@Then("user gets a response with status code {string}")
 	public void user_gets_a_response_with_status_code(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	   
 	}
 
 	@Then("user verifies if the pet has been added successfully")
 	public void user_verifies_if_the_pet_has_been_added_successfully() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    
 	}
 
 }

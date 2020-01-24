@@ -14,7 +14,7 @@ import com.alphaSense.restAssured.petStoreApi.seriliazation.*;
 
 public class AddPet {
 	
-	private RequestSpec requestSpec =  new RequestSpec();
+	private SpecBuilders requestSpec =  new SpecBuilders();
 	private RequestSpecification request;
 	private int id;
 	private String name;
